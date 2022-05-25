@@ -51,7 +51,7 @@
                 "name": "Desktop"
             },
             {
-                "commandline": "ssh hm1508@compute2.cs.york.ac.uk -l hm1508",
+                "commandline": "ssh",
                 "font": 
                 {
                     "face": "JetBrainsMonoMedium Nerd Font"
