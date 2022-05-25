@@ -1,72 +1,100 @@
 {
     "$help": "https://aka.ms/terminal-documentation",
     "$schema": "https://aka.ms/terminal-profiles-schema",
-    "actions": [],
-    "alwaysShowNotificationIcon": false,
-    "defaultProfile": "{07b52e3e-de2c-5db4-bd2d-ba144ed6c273}",
-    "firstWindowPreference": "defaultProfile",
+    "actions": 
+    [
+        {
+            "command": 
+            {
+                "action": "copy",
+                "singleLine": false
+            },
+            "keys": "ctrl+c"
+        },
+        {
+            "command": "paste",
+            "keys": "ctrl+v"
+        },
+        {
+            "command": "find",
+            "keys": "ctrl+shift+f"
+        },
+        {
+            "command": 
+            {
+                "action": "splitPane",
+                "split": "auto",
+                "splitMode": "duplicate"
+            },
+            "keys": "alt+shift+d"
+        }
+    ],
+    "copyFormatting": "none",
+    "copyOnSelect": false,
+    "defaultProfile": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
     "profiles": 
     {
         "defaults": 
         {
-            "colorScheme": "xcad_tdl",
-            "font": 
-            {
-                "face": "Hack Nerd Font",
-                "size": 14
-            },
-            "historySize": 12000,
-            "opacity": 95,
-            "scrollbarState": "visible",
-            "useAcrylic": false
+            "colorScheme": "xcad_tdl"
         },
         "list": 
         [
             {
-                "guid": "{07b52e3e-de2c-5db4-bd2d-ba144ed6c273}",
+                "font": 
+                {
+                    "face": "JetBrainsMonoMedium Nerd Font"
+                },
+                "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
                 "hidden": false,
-                "icon": "%userprofile%\\WindowsTerminalIcons\\ubuntu.png",
-                "name": "Ubuntu Linux",
-                "source": "Windows.Terminal.Wsl",
-                "startingDirectory": "\\\\wsl$\\Ubuntu-20.04\\home\\xcad"
+                "icon": "ms-appdata:///roaming/pws.png",
+                "name": "Desktop"
             },
             {
-                "guid": "{46ca431a-3a87-5fb3-83cd-11ececc031d2}",
+                "commandline": "ssh hm1508@compute2.cs.york.ac.uk -l hm1508",
+                "font": 
+                {
+                    "face": "JetBrainsMonoMedium Nerd Font"
+                },
+                "guid": "{61c54bbd-c2c6-5271-96e7-009a87ffaaaa}",
                 "hidden": false,
-                "icon": "%userprofile%\\WindowsTerminalIcons\\kali.png",
-                "name": "Kali Linux",
-                "source": "Windows.Terminal.Wsl",
-                "startingDirectory": "\\\\wsl.localhost\\kali-linux\\home\\xcad"
+                "icon": "ms-appdata:///roaming/ssh.png",
+                "name": "Uni of York"
             },
             {
-                "commandline": "wsl.exe -d Arch --user xcad",
-                "guid": "{a5a97cb8-8961-5535-816d-772efe0c6a3f}",
-                "hidden": false,
-                "icon": "C:\\Users\\lempa\\WindowsTerminalIcons\\arch.png",
-                "name": "Arch Linux",
-                "source": "Windows.Terminal.Wsl",
-                "startingDirectory": "\\\\wsl.localhost\\Arch\\home\\xcad"
-            },
-            {
-                "commandline": "cmd.exe",
+                "colorScheme": "xcad_tdl",
+                "cursorShape": "vintage",
+                "experimental.retroTerminalEffect": false,
+                "font": 
+                {
+                    "face": "JetBrainsMonoMedium Nerd Font",
+                    "size": 14
+                },
                 "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
-                "icon": "%userprofile%\\WindowsTerminalIcons\\cmd.png",
+                "hidden": false,
+                "icon": "ms-appdata:///roaming/cmd.png",
                 "name": "Commandline"
             },
             {
-                "hidden": true,
                 "guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
-                "icon": "%userprofile%\\WindowsTerminalIcons\\azure.png",
-                "name": "Azure Cloud Shell",
+                "hidden": false,
+                "icon": "ms-appdata:///roaming/azure.png",
+                "name": "Azure Shell",
                 "source": "Windows.Terminal.Azure"
             },
             {
-                "commandline": "C:\\Program Files\\PowerShell\\7\\pwsh.exe --NoLogo",
-                "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
+                "colorScheme": "xcad_tdl",
+                "cursorHeight": 25,
+                "cursorShape": "vintage",
+                "font": 
+                {
+                    "face": "JetBrainsMonoMedium Nerd Font"
+                },
+                "guid": "{2c4de342-38b7-51cf-b940-2309a097f518}",
                 "hidden": false,
-                "icon": "%userprofile%\\WindowsTerminalIcons\\ps.png",
-                "name": "PowerShell",
-                "source": "Windows.Terminal.PowershellCore",
+                "icon": "ms-appdata:///roaming/ubuntu.png",
+                "name": "Ubuntu",
+                "source": "Windows.Terminal.Wsl"
             }
         ]
     },
@@ -395,7 +423,5 @@
             "yellow": "#E5E510"
         }
     ],
-    "showTabsInTitlebar": true,
-    "tabSwitcherMode": "inOrder",
-    "useAcrylicInTabRow": true
+    "tabWidthMode": "equal"
 }
