@@ -5,7 +5,7 @@ add_newline = true
 
 # Change the default prompt format
 format = """\
-[╭╴](238)$env_var\
+[╭╴](238)[](056)  aei \
 $all[╰─](238)$character"""
 
 # Change the default prompt characters
@@ -70,8 +70,7 @@ format = "via [ $context](bold blue) "
 format = "via [ $version](bold purple) "
 
 [python]
-symbol = " "
-python_binary = "python3"
+format = "via [ $version](bold #685aff) "
 
 [nodejs]
 format = "via [ $version](bold green) "
