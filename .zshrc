@@ -54,6 +54,8 @@ alias grep='grep --color'
 alias cbp="code /home/xcad/obsidianvault/boilerplates"
 alias cpr="code /home/xcad/obsidianvault/projects"
 
+alias cls='clear'
+
 # find out which distribution we are running on
 LFILE="/etc/*-release"
 MFILE="/System/Library/CoreServices/SystemVersion.plist"
@@ -88,10 +90,15 @@ case $_distro in
     *manjaro*)               ICON="";;
     *rhel*)                  ICON="";;
     *macos*)                 ICON="";;
-    *)                       ICON="";;
+    *)                       ICON=" [](056)";;
 esac
 
-export STARSHIP_DISTRO="$ICON"
+# export STARSHIP_DISTRO="$ICON"
+
+path+=('/home/aei/.local/bin')
+path+=('/home/aei/.cargo/bin')
+path+=('/usr/local/go/bin')
+export PATH
 
 # Load Starship
 eval "$(starship init zsh)"
