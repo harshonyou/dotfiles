@@ -1,0 +1,87 @@
+{
+    "window.zoomLevel": 0,
+    "files.trimTrailingWhitespace": true,
+    "code-runner.runInTerminal": true,
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "sonarlint.ls.javaHome": "c:\\Users\\Harsh Mohan\\.vscode\\extensions\\sonarsource.sonarlint_managed-jre\\jre\\jdk-11.0.9.1+1-jre",
+    "sonarlint.rules": {
+        "java:S120": {
+            "level": "off"
+        },
+        "java:S106": {
+            "level": "off"
+        },
+        "javascript:S1854": {
+            "level": "off"
+        }
+    },
+    "python.languageServer": "Default",
+    "java.refactor.renameFromFileExplorer": "preview",
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.editor.enablePreview": false,
+    "liveshare.authenticationProvider": "GitHub",
+    "files.exclude": {
+        "**/.classpath": true,
+        "**/.project": true,
+        "**/.settings": true,
+        "**/.factorypath": true
+    },
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter.notebook.ipynb"
+    },
+    "editor.fontSize": 24,
+    "workbench.colorTheme": "Material Theme Darker High Contrast",
+    "bracket-pair-colorizer-2.highlightActiveScope": true,
+    "bracket-pair-colorizer-2.showBracketsInRuler": true,
+    "editor.cursorBlinking": "smooth",
+    "editor.cursorSmoothCaretAnimation": true,
+    "editor.cursorStyle": "underline",
+    "remote.SSH.remotePlatform": {
+        "compute2.cs.york.ac.uk": "linux"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[css]": {
+        "editor.defaultFormatter": "sibiraj-s.vscode-scss-formatter"
+    },
+    "haskell.manageHLS": "PATH",
+    "bracket-pair-colorizer-2.depreciation-notice": false,
+    "python.linting.pylintEnabled": true,
+    "[markdown]": {
+        "files.trimTrailingWhitespace": false
+    },
+    "editor.letterSpacing": 0.1,
+    "editor.fontFamily": "Consolas, 'Courier New', monospace, 'JetBrainsMonoMedium Nerd Font'",
+    "terminal.integrated.fontSize": 16,
+    "terminal.integrated.fontFamily": "'JetBrainsMono NF','JetBrainsMonoMedium Nerd Font'",
+    "terminal.integrated.letterSpacing": 1,
+    "workbench.colorCustomizations": {
+        "terminal.background":"#131212",
+        "terminal.ansiBlack":"#121212",
+        "terminal.blue": "#2B4FFF",
+        "terminal.ansiBrightBlack": "#2F2F2F",
+        "terminal.ansiBrightBlue": "#5C78FF",
+        "terminal.ansiBrightCyan": "#5AC8FF",
+        "terminal.ansiBrightGreen": "#905AFF",
+        "terminal.ansiBrightMagenta": "#5EA2FF",
+        // "terminal.ansiBrightRed": "#BA5AFF",
+        "terminal.ansiBrightRed": "#ff005f",
+        "terminal.ansiBrightWhite": "#FFFFFF",
+        "terminal.ansiBrightYellow": "#685AFF",
+        "terminalCursor.background":"#FFFFFF",
+        "terminalCursor.foreground":"#FFFFFF",
+        "terminal.ansiCyan": "#28B9FF",
+        "terminal.foreground": "#F1F1F1",
+        "terminal.ansiGreen": "#7129FF",
+        "terminal.ansiMagenta": "#2883FF",
+        "terminal.ansiRed": "#A52AFF",
+        "terminal.selectionBackground": "#FFFFFF",
+        "terminal.ansiWhite": "#F1F1F1",
+        "terminal.ansiYellow": "#3D2AFF",
+    },
+    "editor.tokenColorCustomizations": {
+
+    }
+}
