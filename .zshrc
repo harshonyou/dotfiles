@@ -55,6 +55,7 @@ alias cbp="code /home/xcad/obsidianvault/boilerplates"
 alias cpr="code /home/xcad/obsidianvault/projects"
 
 alias cls='clear'
+alias py='python3'
 
 # find out which distribution we are running on
 LFILE="/etc/*-release"
