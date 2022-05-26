@@ -56,8 +56,9 @@ alias cpr="code /home/xcad/obsidianvault/projects"
 
 alias cls='clear'
 alias py='python3'
+alias pypip='python3 -m pip'
 
-alias startenv='source env/bin/activate'
+alias startenv='source /home/aei/.local/.env/bin/activate'
 alias endenv='deactivate'
 
 # find out which distribution we are running on
