@@ -57,6 +57,9 @@ alias cpr="code /home/xcad/obsidianvault/projects"
 alias cls='clear'
 alias py='python3'
 
+alias startenv='source env/bin/activate'
+alias endenv='deactivate'
+
 # find out which distribution we are running on
 LFILE="/etc/*-release"
 MFILE="/System/Library/CoreServices/SystemVersion.plist"
