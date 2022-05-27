@@ -56,7 +56,7 @@ alias cpr="code /home/xcad/obsidianvault/projects"
 
 alias cls='clear'
 alias py='python3'
-alias pypip='python3 -m pip'
+alias pyp='python3 -m pip'
 
 alias startenv='source /home/aei/.local/.env/bin/activate'
 alias endenv='deactivate'
@@ -101,9 +101,10 @@ esac
 # export STARSHIP_DISTRO="$ICON"
 
 path+=('/home/aei/.local/bin')
-path+=('/home/aei/.cargo/bin')
-path+=('/usr/local/go/bin')
 export PATH
+
+# Load The Fuck
+eval $(thefuck --alias fuck)
 
 # Load Starship
 eval "$(starship init zsh)"
