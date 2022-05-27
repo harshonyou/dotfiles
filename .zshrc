@@ -61,6 +61,10 @@ alias pyp='python3 -m pip'
 alias startenv='source /home/aei/.local/.env/bin/activate'
 alias endenv='deactivate'
 
+alias h='history'
+alias hs='history | grep'
+alias hsi='history | grep -i'
+
 # find out which distribution we are running on
 LFILE="/etc/*-release"
 MFILE="/System/Library/CoreServices/SystemVersion.plist"
@@ -95,7 +99,7 @@ case $_distro in
     *manjaro*)               ICON="";;
     *rhel*)                  ICON="";;
     *macos*)                 ICON="";;
-    *)                       ICON=" [](056)";;
+    *)                       ICON="";;
 esac
 
 # export STARSHIP_DISTRO="$ICON"
@@ -108,3 +112,9 @@ eval $(thefuck --alias fuck)
 
 # Load Starship
 eval "$(starship init zsh)"
+
+# Fish auto comeplete
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# Z command
+source ~/.zsh/zsh-z/zsh-z.plugin.zsh
