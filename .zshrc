@@ -55,12 +55,15 @@ alias cbp="code /home/xcad/obsidianvault/boilerplates"
 alias cpr="code /home/xcad/obsidianvault/projects"
 
 alias cls='clear'
+alias nano='nano -T4'
 alias py='python3'
 alias pyp='python3 -m pip'
 
+# python virtual env
 alias startenv='source /home/aei/.local/.env/bin/activate'
 alias endenv='deactivate'
 
+# history
 alias h='history'
 alias hs='history | grep'
 alias hsi='history | grep -i'
@@ -104,8 +107,8 @@ esac
 
 # export STARSHIP_DISTRO="$ICON"
 
-path+=('/home/aei/.local/bin')
-export PATH
+# path+=('/home/aei/.local/bin')
+# export PATH
 
 # Load The Fuck
 eval $(thefuck --alias fuck)
@@ -118,3 +121,6 @@ source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Z command
 source ~/.zsh/zsh-z/zsh-z.plugin.zsh
+
+# Syntax Highlighting
+source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
