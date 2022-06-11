@@ -1,0 +1,7 @@
+# Basic Settings
+set previewer ~/scripts/lf/preview
+set preview true
+set hidden true
+set drawbox true
+set icons true
+set ignorecase true
