@@ -55,6 +55,9 @@ c () {
   g++ "$1" -o ./bin/"${1%.*}" && ./bin/"${1%.*}"
 }
 
+alias lg="lazygit"
+alias py="python3"
+
 if ! zplug check --verbose; then
     printf "Install? [y/N]: "
     if read -q; then
