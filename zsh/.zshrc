@@ -50,6 +50,11 @@ alias h='history'
 alias hs='history | grep'
 alias hsi='history | grep -i'
 
+c () {
+  [ -d ./bin ] || mkdir bin
+  g++ "$1" -o ./bin/"${1%.*}" && ./bin/"${1%.*}"
+}
+
 if ! zplug check --verbose; then
     printf "Install? [y/N]: "
     if read -q; then
