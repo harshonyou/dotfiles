@@ -1,7 +1,10 @@
-### Stow
 
+## Stow
+GNU [`stow`](https://www.gnu.org/software/stow/) is required to use the dotfiles.
+
+### Usage
 ```zsh
-# Flags 
+# <flags> : "explanation" 
 -n
 Dry run
 
@@ -24,7 +27,7 @@ Target directory (mostly $HOME aka ~) (default is parent of stow dir)
 Import existing files into stow package from the target
 ```
 
+### Example
 ```zsh
-# Example
 stow --adopt -nvt ~ *
 ```
