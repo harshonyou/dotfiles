@@ -57,6 +57,7 @@ c () {
 
 alias lg="lazygit"
 alias py="python3"
+alias fetch="neofetch"
 
 if ! zplug check --verbose; then
     printf "Install? [y/N]: "
