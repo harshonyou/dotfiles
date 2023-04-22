@@ -1,3 +1,8 @@
+# harshonyou's dotfiles and more
+
+## Keyboard
+I use the [Corne keyboard](https://github.com/foostan/crkbd), which is a split 
+keyboard with 3x6 column staggered keys and 3 thumb keys.
 
 ## Stow
 GNU [`stow`](https://www.gnu.org/software/stow/) is required to use the dotfiles.
