@@ -1,5 +1,7 @@
 . "$HOME/.cargo/env"
 
+export BROWSER=wslview
+
 # lf icons
 export LF_ICONS="\
 tw=:\
