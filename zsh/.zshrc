@@ -37,6 +37,7 @@ zplug "zsh-users/zsh-history-substring-search"
 zplug "MichaelAquilina/zsh-you-should-use"
 zplug "jimhester/per-directory-history"
 zplug "plugins/dirhistory", from:oh-my-zsh
+zplug "plugins/web-search", from:oh-my-zsh
 zplug "zpm-zsh/material-colors"
 zplug "trapd00r/LS_COLORS"
 
