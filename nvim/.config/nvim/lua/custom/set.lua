@@ -1,15 +1,16 @@
 local prefix = vim.env.XDG_CONFIG_HOME or vim.fn.expand "~/.config"
+local opt = vim.opt
 
-vim.opt.relativenumber = true
-vim.opt.colorcolumn = "80"
+opt.relativenumber = true
+opt.colorcolumn = "80"
 
-vim.opt.clipboard = "unnamedplus"
+opt.clipboard = "unnamedplus"
 
-vim.opt.scrolloff = 10
-vim.opt.breakindent = true
+opt.scrolloff = 10
+opt.breakindent = true
 
--- vim.opt.wildignore:append { "" }
+-- opt.wildignore:append { "" }
 
-vim.opt.undofile = true
-vim.opt.undodir = { prefix .. "/nvim/.undo//" }
-vim.opt.undolevels = 10000
+opt.undofile = true
+opt.undodir = { prefix .. "/nvim/.undo//" }
+opt.undolevels = 10000
