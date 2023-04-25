@@ -1,7 +1,5 @@
 local M = {}
 
-M.plugins = 'custom.plugins'
-
 M.ui = {
   theme = 'catppuccin',
 
@@ -9,6 +7,8 @@ M.ui = {
     load_on_startup = true,
   }
 }
+
+M.plugins = 'custom.plugins'
 
 M.mappings = require 'custom.mappings'
 
