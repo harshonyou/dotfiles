@@ -1,6 +1,6 @@
 . "$HOME/.cargo/env"
 
-export BROWSER=wslview
+export PATH=$PATH:"/mnt/c/Windows/System32/"
 
 # lf icons
 export LF_ICONS="\
