@@ -60,6 +60,8 @@ alias lg="lazygit"
 alias py="python3"
 alias fetch="neofetch"
 
+[ -f "/home/aei/.ghcup/env" ] && source "/home/aei/.ghcup/env" # ghcup-env
+
 if ! zplug check --verbose; then
     printf "Install? [y/N]: "
     if read -q; then
@@ -71,4 +73,5 @@ zplug load #--verbose
 
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*' menu yes select
+
 
