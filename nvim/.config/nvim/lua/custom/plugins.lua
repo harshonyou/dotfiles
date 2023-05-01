@@ -43,7 +43,8 @@ local plugins = {
         "stylua",
         "shfmt",
         "luacheck",
-        "haskell-language-server"
+        "haskell-language-server",
+        "rustfmt"
       },
     },
   },
