@@ -44,7 +44,8 @@ local plugins = {
         "shfmt",
         "luacheck",
         "haskell-language-server",
-        "rustfmt"
+        "rustfmt",
+        "rust-analyzer"
       },
     },
   },
