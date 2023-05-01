@@ -33,6 +33,9 @@ local sources = {
 
   -- haskell
   formatting.stylish_haskell,
+
+  -- rust 
+  formatting.rustfmt,
 }
 
 null_ls.setup({
