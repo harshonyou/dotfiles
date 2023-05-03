@@ -60,6 +60,8 @@ alias lg="lazygit"
 alias py="python3"
 alias fetch="neofetch"
 
+alias explorer="/mnt/c/Windows/explorer.exe ."
+
 [ -f "/home/aei/.ghcup/env" ] && source "/home/aei/.ghcup/env" # ghcup-env
 
 if ! zplug check --verbose; then
