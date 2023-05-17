@@ -140,6 +140,11 @@ local plugins = {
       vim.fn["mkdp#util#install"]()
     end,
   },
+
+  {
+    "vimwiki/vimwiki",
+    ft = { "markdown", "vimwiki" },
+  },
 }
 
 return plugins
