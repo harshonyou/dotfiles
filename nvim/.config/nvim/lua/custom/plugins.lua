@@ -47,6 +47,7 @@ local plugins = {
         "rustfmt",
         "rust-analyzer",
         "gofumpt",
+        "goimports",
       },
     },
   },
