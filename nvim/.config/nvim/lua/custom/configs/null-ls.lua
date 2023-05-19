@@ -28,13 +28,13 @@ local sources = {
       "c",
       "cpp",
       "proto",
-    }
+    },
   }),
 
   -- haskell
   formatting.stylish_haskell,
 
-  -- rust 
+  -- rust
   formatting.rustfmt,
 
   -- golang
