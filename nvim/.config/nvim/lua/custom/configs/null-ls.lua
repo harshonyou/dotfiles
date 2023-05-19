@@ -39,6 +39,7 @@ local sources = {
 
   -- golang
   formatting.gofmt,
+  formatting.goimports,
 }
 
 null_ls.setup({
