@@ -1,6 +1,9 @@
 . "$HOME/.cargo/env"
 
 export PATH=$PATH:"/mnt/c/Windows/System32/"
+export PATH=$PATH:/usr/local/go/bin
+
+export GOPATH=$HOME/.go
 
 # lf icons
 export LF_ICONS="\
