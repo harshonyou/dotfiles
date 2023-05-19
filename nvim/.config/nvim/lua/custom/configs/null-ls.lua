@@ -40,6 +40,7 @@ local sources = {
   -- golang
   formatting.gofmt,
   formatting.goimports,
+  formatting.goimports_reviser,
 }
 
 null_ls.setup({
