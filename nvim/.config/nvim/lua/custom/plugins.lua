@@ -46,6 +46,7 @@ local plugins = {
         "haskell-language-server",
         "rustfmt",
         "rust-analyzer",
+        "gopls",
         "gofumpt",
         "goimports",
         "goimports-reviser",
