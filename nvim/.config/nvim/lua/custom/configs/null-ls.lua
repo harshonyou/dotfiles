@@ -36,6 +36,9 @@ local sources = {
 
   -- rust 
   formatting.rustfmt,
+
+  -- golang
+  formatting.gofmt,
 }
 
 null_ls.setup({
