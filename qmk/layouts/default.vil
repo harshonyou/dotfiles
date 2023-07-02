@@ -7,16 +7,16 @@
         "KC_TAB",
         "KC_Q",
         "KC_W",
-        "KC_E",
-        "KC_R",
-        "KC_T"
+        "KC_F",
+        "KC_P",
+        "KC_B"
       ],
       [
         "KC_LCTRL",
         "KC_A",
+        "KC_R",
         "KC_S",
-        "KC_D",
-        "KC_F",
+        "KC_T",
         "KC_G"
       ],
       [
@@ -24,8 +24,8 @@
         "KC_Z",
         "KC_X",
         "KC_C",
-        "KC_V",
-        "KC_B"
+        "KC_D",
+        "KC_V"
       ],
       [
         -1,
@@ -36,28 +36,28 @@
         "KC_SPACE"
       ],
       [
-        "KC_BSPACE",
-        "KC_P",
-        "KC_O",
-        "KC_I",
-        "KC_U",
-        "KC_Y"
-      ],
-      [
         "KC_QUOTE",
         "KC_SCOLON",
+        "KC_Y",
+        "KC_U",
         "KC_L",
-        "KC_K",
-        "KC_J",
-        "KC_H"
+        "KC_J"
+      ],
+      [
+        "KC_BSPACE",
+        "KC_O",
+        "KC_I",
+        "KC_E",
+        "KC_N",
+        "KC_M"
       ],
       [
         "KC_ESCAPE",
         "KC_SLASH",
         "KC_DOT",
         "KC_COMMA",
-        "KC_M",
-        "KC_N"
+        "KC_H",
+        "KC_K"
       ],
       [
         -1,
