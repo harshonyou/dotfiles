@@ -4,7 +4,7 @@
   "layout": [
     [
       [
-        "KC_TAB",
+        "KC_MINUS",
         "KC_Q",
         "KC_W",
         "KC_F",
@@ -12,7 +12,7 @@
         "KC_B"
       ],
       [
-        "KC_LCTRL",
+        "KC_TAB",
         "KC_A",
         "KC_R",
         "KC_S",
@@ -20,7 +20,7 @@
         "KC_G"
       ],
       [
-        "KC_LSHIFT",
+        "KC_EQUAL",
         "KC_Z",
         "KC_X",
         "KC_C",
@@ -79,19 +79,19 @@
       ],
       [
         "KC_LCTRL",
-        "KC_NO",
-        "KC_NO",
-        "KC_NO",
-        "KC_NO",
-        "KC_NO"
+        "LSFT(KC_4)",
+        "LSFT(KC_EQUAL)",
+        "LSFT(KC_9)",
+        "LSFT(KC_0)",
+        "LSFT(KC_2)"
       ],
       [
         "KC_LSHIFT",
-        "KC_NO",
-        "KC_NO",
-        "KC_NO",
-        "KC_NO",
-        "KC_NO"
+        "LSFT(KC_1)",
+        "LSFT(KC_3)",
+        "LSFT(KC_LBRACKET)",
+        "LSFT(KC_RBRACKET)",
+        "LSFT(KC_GRAVE)"
       ],
       [
         -1,
@@ -111,19 +111,19 @@
       ],
       [
         "KC_BSPACE",
-        "KC_NO",
-        "KC_RIGHT",
+        "KC_KP_ASTERISK",
+        "LSFT(KC_MINUS)",
         "KC_UP",
-        "KC_DOWN",
-        "KC_LEFT"
+        "KC_KP_EQUAL",
+        "KC_KP_MINUS"
       ],
       [
         "KC_NO",
-        "KC_NO",
-        "KC_NO",
-        "KC_NO",
-        "KC_NO",
-        "KC_NO"
+        "LSFT(KC_6)",
+        "LSFT(KC_5)",
+        "LSFT(KC_RBRACKET)",
+        "LSFT(KC_LBRACKET)",
+        "LSFT(KC_7)"
       ],
       [
         -1,
@@ -136,15 +136,7 @@
     ],
     [
       [
-        "KC_TAB",
-        "LSFT(KC_1)",
-        "LSFT(KC_2)",
-        "LSFT(KC_3)",
-        "LSFT(KC_4)",
-        "LSFT(KC_5)"
-      ],
-      [
-        "KC_LCTRL",
+        "KC_NO",
         "KC_NO",
         "KC_NO",
         "KC_NO",
@@ -152,7 +144,15 @@
         "KC_NO"
       ],
       [
-        "KC_LSHIFT",
+        "KC_NO",
+        "KC_NO",
+        "KC_NO",
+        "KC_NO",
+        "KC_NO",
+        "KC_NO"
+      ],
+      [
+        "KC_NO",
         "KC_NO",
         "KC_NO",
         "KC_NO",
@@ -168,28 +168,28 @@
         "KC_SPACE"
       ],
       [
-        "KC_BSPACE",
-        "LSFT(KC_0)",
-        "LSFT(KC_9)",
-        "LSFT(KC_8)",
-        "LSFT(KC_7)",
-        "LSFT(KC_6)"
+        "KC_NO",
+        "KC_NO",
+        "KC_NO",
+        "KC_NO",
+        "KC_NO",
+        "KC_NO"
       ],
       [
-        "KC_GRAVE",
-        "KC_BSLASH",
-        "KC_RBRACKET",
-        "KC_LBRACKET",
-        "KC_EQUAL",
-        "KC_MINUS"
+        "KC_NO",
+        "KC_NO",
+        "KC_RIGHT",
+        "KC_UP",
+        "KC_DOWN",
+        "KC_LEFT"
       ],
       [
-        "LSFT(KC_GRAVE)",
-        "LSFT(KC_BSLASH)",
-        "LSFT(KC_RBRACKET)",
-        "LSFT(KC_LBRACKET)",
-        "LSFT(KC_EQUAL)",
-        "LSFT(KC_MINUS)"
+        "KC_NO",
+        "KC_NO",
+        "KC_NO",
+        "KC_NO",
+        "KC_NO",
+        "KC_NO"
       ],
       [
         -1,
