@@ -31,7 +31,7 @@
         -1,
         -1,
         -1,
-        "KC_LGUI",
+        "TD(0)",
         "FN_MO13",
         "KC_SPACE"
       ],
@@ -52,7 +52,7 @@
         "KC_M"
       ],
       [
-        "KC_ESCAPE",
+        "KC_GESC",
         "KC_SLASH",
         "KC_DOT",
         "KC_COMMA",
@@ -65,7 +65,7 @@
         -1,
         "KC_RALT",
         "FN_MO23",
-        "KC_ENTER"
+        "LSFT_T(KC_ENTER)"
       ]
     ],
     [
@@ -296,9 +296,9 @@
   "via_protocol": 9,
   "tap_dance": [
     [
-      "KC_NO",
-      "KC_NO",
-      "KC_NO",
+      "KC_LGUI",
+      "KC_LCTRL",
+      "OSM(MOD_LCTL|MOD_LSFT)",
       "KC_NO",
       180
     ],
