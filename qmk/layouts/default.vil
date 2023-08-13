@@ -113,9 +113,9 @@
         "KC_BSPACE",
         "KC_KP_ASTERISK",
         "LSFT(KC_MINUS)",
-        "KC_UP",
-        "KC_KP_EQUAL",
-        "KC_KP_MINUS"
+        "KC_EQUAL",
+        "KC_MINUS",
+        "LSFT(KC_BSLASH)"
       ],
       [
         "KC_NO",
@@ -146,17 +146,17 @@
       [
         "KC_NO",
         "KC_NO",
-        "KC_NO",
-        "KC_NO",
-        "KC_NO",
-        "KC_NO"
+        "KC_MPRV",
+        "KC_MUTE",
+        "KC_MPLY",
+        "KC_MNXT"
       ],
       [
         "KC_NO",
         "KC_NO",
         "KC_NO",
-        "KC_NO",
-        "KC_NO",
+        "KC_VOLD",
+        "KC_VOLU",
         "KC_NO"
       ],
       [
@@ -210,18 +210,18 @@
         "KC_NO"
       ],
       [
-        "RGB_TOG",
-        "RGB_HUI",
-        "RGB_SAI",
-        "RGB_VAI",
+        "KC_NO",
+        "KC_NO",
+        "KC_NO",
+        "KC_NO",
         "KC_NO",
         "KC_NO"
       ],
       [
-        "RGB_MOD",
-        "RGB_HUD",
-        "RGB_SAD",
-        "RGB_VAD",
+        "KC_NO",
+        "KC_NO",
+        "KC_NO",
+        "KC_NO",
         "KC_NO",
         "KC_NO"
       ],
