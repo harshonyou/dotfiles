@@ -7,7 +7,7 @@ if not status then
   return
 end
 
-local servers = { "clangd", "hls", "rust_analyzer", "gopls" }
+local servers = { "clangd", "hls", "rust_analyzer", "gopls", "pylyzer" }
 
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup({
