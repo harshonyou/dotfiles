@@ -28,6 +28,7 @@ alias g="goto"
 
 alias srczsh="source ~/.zshrc"
 alias srcros="source /opt/ros/humble/setup.zsh"
+alias srccol="source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.zsh"
 
 source ~/.zplug/init.zsh
 
