@@ -27,6 +27,7 @@ source "/usr/local/share/goto.sh"
 alias g="goto"
 
 alias srczsh="source ~/.zshrc"
+alias srcros="source /opt/ros/humble/setup.zsh"
 
 source ~/.zplug/init.zsh
 
