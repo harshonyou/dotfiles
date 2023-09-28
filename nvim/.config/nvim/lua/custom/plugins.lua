@@ -50,6 +50,9 @@ local plugins = {
         "gofumpt",
         "goimports",
         "goimports-reviser",
+
+        --python
+        "pylyzer",
       },
     },
   },
