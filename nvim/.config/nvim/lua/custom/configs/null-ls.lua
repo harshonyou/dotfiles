@@ -43,6 +43,7 @@ local sources = {
   formatting.goimports_reviser,
   -- python
   lint.mypy,
+  lint.ruff,
 }
 
 null_ls.setup({
