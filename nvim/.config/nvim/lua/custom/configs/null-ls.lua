@@ -41,7 +41,9 @@ local sources = {
   formatting.gofmt,
   formatting.goimports,
   formatting.goimports_reviser,
+
   -- python
+  formatting.black,
   lint.mypy,
   lint.ruff,
 }
