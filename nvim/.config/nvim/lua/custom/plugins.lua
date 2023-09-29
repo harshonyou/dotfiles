@@ -54,6 +54,7 @@ local plugins = {
         --python
         "pylyzer",
         "mypy",
+        "ruff",
       },
     },
   },
