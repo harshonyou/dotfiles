@@ -53,6 +53,7 @@ local plugins = {
 
         --python
         "pylyzer",
+        "mypy",
       },
     },
   },
