@@ -55,6 +55,7 @@ local plugins = {
         "pylyzer",
         "mypy",
         "ruff",
+        "black",
       },
     },
   },
