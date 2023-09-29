@@ -10,6 +10,8 @@ local plugins = {
 
         -- low level
         "cpp",
+
+        "markdown",
       },
     },
   },
