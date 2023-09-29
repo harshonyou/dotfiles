@@ -41,6 +41,8 @@ local sources = {
   formatting.gofmt,
   formatting.goimports,
   formatting.goimports_reviser,
+  -- python
+  lint.mypy,
 }
 
 null_ls.setup({
