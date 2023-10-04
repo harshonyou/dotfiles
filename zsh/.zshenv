@@ -1,6 +1,7 @@
 . "$HOME/.cargo/env"
 
 export PATH=$PATH:"/mnt/c/Windows/System32/"
+export PATH=$PATH:"/mnt/c/Users/ycxcy/AppData/Local/Programs/Microsoft VS Code/bin"
 export PATH=$PATH:/usr/local/go/bin
 
 export GOPATH=$HOME/.go
