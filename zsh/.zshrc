@@ -27,10 +27,20 @@ source "/usr/local/share/goto.sh"
 alias g="goto"
 
 alias srczsh="source ~/.zshrc"
+
 alias srcros="source /opt/ros/humble/setup.zsh"
 alias srccol="source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.zsh"
 alias srcrws="source /home/aei/repos/ros2_ws/install/setup.zsh"
 alias srctb3="source /home/aei/repos/turtlebot3_ws/install/setup.zsh"
+
+function ros() {
+  srcros
+  srccol
+  srcrws
+  srctb3
+  complete -o nospace -o default -F _python_argcomplete "ros2"
+  complete -o nospace -o default -F _python_argcomplete "colcon"
+}
 
 export ROS_DOMAIN_ID=30 #TURTLEBOT3
 export TURTLEBOT3_MODEL=waffle_pi
