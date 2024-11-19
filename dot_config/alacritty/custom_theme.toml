@@ -1,0 +1,47 @@
+# Enhanced Alacritty Theme
+[colors.primary]
+background = '#1A1A1A'  # Dark neutral background
+foreground = '#EDEDED'  # Slightly brighter for better readability
+
+# Cursor colors
+[colors.cursor]
+text = '#1A1A1A'        # Inverse of background for visibility
+cursor = '#FFD700'      # Golden cursor for standout visibility
+
+# Selection colors
+[colors.selection]
+text = '#1A1A1A'        # Inverse for selected text
+background = '#FFD7AF'  # Soft pastel orange for selection
+
+# Normal colors
+[colors.normal]
+black = '#121212'       # Neutral dark black
+red = '#E06C75'         # Soft red for errors
+green = '#98C379'       # Calming green for success
+yellow = '#E5C07B'      # Warm yellow for warnings
+blue = '#61AFEF'        # Cool blue for primary focus
+magenta = '#C678DD'     # Vibrant purple for accents
+cyan = '#56B6C2'        # Calm cyan for info
+white = '#ABB2BF'       # Soft white for normal text
+
+# Bright colors
+[colors.bright]
+black = '#2F2F2F'       # Slightly brighter black for contrast
+red = '#FF6C75'         # Vibrant red for highlights
+green = '#B8E394'       # Brighter green for emphasis
+yellow = '#FFD700'      # Golden yellow for highlights
+blue = '#5C78FF'        # Bright blue for important text
+magenta = '#D55FDE'     # Enhanced magenta for vivid accents
+cyan = '#62CFF3'        # Brighter cyan for highlights
+white = '#E6E6E6'       # Brighter white for emphasis
+
+# Dim colors (subtle, muted tones for inactive elements)
+[colors.dim]
+black = '#1E1E1E'       # Dimmed black for inactive UI
+red = '#9A4757'         # Muted red for inactive errors
+green = '#6A9A5D'       # Muted green for subdued success
+yellow = '#B89B64'      # Muted yellow for background warnings
+blue = '#4876A6'        # Muted blue for secondary focus
+magenta = '#9A5E99'     # Soft magenta for inactive accents
+cyan = '#4A8C99'        # Muted cyan for inactive info
+white = '#9E9E9E'       # Dimmed white for inactive text
