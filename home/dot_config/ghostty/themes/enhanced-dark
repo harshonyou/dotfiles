@@ -1,0 +1,39 @@
+# Enhanced Dark — Ghostty port of your Alacritty scheme
+# Save as ~/.config/ghostty/themes/enhanced-dark.gtheme
+
+# ---- required 16-colour palette ----
+palette = 0=#121212
+palette = 1=#E06C75
+palette = 2=#98C379
+palette = 3=#E5C07B
+palette = 4=#61AFEF
+palette = 5=#C678DD
+palette = 6=#56B6C2
+palette = 7=#ABB2BF
+palette = 8=#2F2F2F
+palette = 9=#FF6C75
+palette = 10=#B8E394
+palette = 11=#FFD700
+palette = 12=#5C78FF
+palette = 13=#D55FDE
+palette = 14=#62CFF3
+palette = 15=#E6E6E6
+
+# ---- UI colours ----
+background            = #1A1A1A
+foreground            = #EDEDED
+cursor-color          = #FFD700
+cursor-text           = #1A1A1A
+selection-background  = #FFD7AF
+selection-foreground  = #1A1A1A
+
+# ---- optional “dim” set (indices 16-23) ----
+# palette = 16=#1E1E1E
+# palette = 17=#9A4757
+# palette = 18=#6A9A5D
+# palette = 19=#B89B64
+# palette = 20=#4876A6
+# palette = 21=#9A5E99
+# palette = 22=#4A8C99
+# palette = 23=#9E9E9E
+
