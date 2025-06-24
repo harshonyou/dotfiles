@@ -1,0 +1,22 @@
+return {
+	-- "echasnovski/mini.splitjoin",
+	-- config = function()
+	-- 	local miniSplitJoin = require("mini.splitjoin")
+	--
+	-- 	miniSplitJoin.setup({
+	-- 		mappings = { toggle = "" }, -- Disable default mapping
+	-- 	})
+	--
+	-- 	vim.keymap.set({ "n", "x" }, "sM", function()
+	-- 		miniSplitJoin.toggle()
+	-- 	end, { desc = "Toggle arguments" })
+	--
+	-- 	vim.keymap.set({ "n", "x" }, "sJ", function()
+	-- 		miniSplitJoin.join()
+	-- 	end, { desc = "Join arguments" })
+	--
+	-- 	vim.keymap.set({ "n", "x" }, "sK", function()
+	-- 		miniSplitJoin.split()
+	-- 	end, { desc = "Split arguments" })
+	-- end,
+}
