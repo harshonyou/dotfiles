@@ -145,8 +145,8 @@ fish_add_path -gP "$HOMEBREW_PREFIX/bin" "$HOMEBREW_PREFIX/sbin";
 ! set -q INFOPATH; and set INFOPATH ''; set -gx INFOPATH "$HOMEBREW_PREFIX/share/info" $INFOPATH;
 
 # Path configuration 
-fish_add_path /Users/aei/.cargo/bin
-fish_add_path /Users/aei/go/bin
+fish_add_path ~/.cargo/bin
+fish_add_path ~/go/bin
 
 # Function to grammar check
 function gptg
