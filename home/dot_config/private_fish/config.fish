@@ -273,7 +273,9 @@ alias ffs="gcloud auth application-default login"
 # Or install it from the Arch User Repository: shell-color-scripts
 # colorscript random
 # fastfetch -c neofetch.jsonc
-echo "" & pokeget charizard --hide-name | fastfetch -c neofetch.jsonc --logo-padding-left 10 --file-raw -
+if status is-interactive
+  echo "" & pokeget charizard --hide-name | fastfetch -c neofetch.jsonc --logo-padding-left 10 --file-raw -
+end
 
 ### SETTING THE STARSHIP PROMPT ###
 starship init fish | source
