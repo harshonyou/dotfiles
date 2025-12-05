@@ -206,7 +206,7 @@ return {
 		local servers = {
 			bashls = {},
 			marksman = {},
-			-- clangd = {},
+			clangd = {},
 			gopls = {},
 			-- pyright = {},
 			-- rust_analyzer = {},
@@ -263,6 +263,8 @@ return {
 			"delve",
 			"gofumpt",
 			"golangci-lint",
+			"clangd", -- C++ LSP server (includes clang-tidy)
+			"clang-format", -- C++ formatter
 		})
 		require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 

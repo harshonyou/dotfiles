@@ -10,6 +10,8 @@ return {
 			-- lua = { "luacheck" },
 			-- python = { "ruff" },
 			go = { "golangcilint" },
+			-- cpp = { "clangtidy" }, -- clangd LSP provides diagnostics
+			-- c = { "clangtidy" },
 		}
 
 		vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost", "InsertLeave" }, {

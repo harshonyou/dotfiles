@@ -8,6 +8,8 @@ return {
 			-- markdown = { "prettierd" },
 			markdown = { "mdformat" },
 			go = { "gofumpt" },
+			cpp = { "clang_format" },
+			c = { "clang_format" },
 		},
 		format_on_save = {
 			-- These options will be passed to conform.format()
