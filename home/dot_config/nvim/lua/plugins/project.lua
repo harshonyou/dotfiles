@@ -1,10 +1,34 @@
 return {
     "ahmedkhalf/project.nvim",
     init = function()
+        -- project.nvim uses removed vim.lsp.buf_get_clients() — patch until upstream fixes it
+        if vim.lsp.buf_get_clients == nil then
+            vim.lsp.buf_get_clients = function(bufnr)
+                return vim.lsp.get_clients({ bufnr = bufnr or 0 })
+            end
+        end
+
         require("project_nvim").setup {
-            -- your configuration comes her
-            -- or leave it empty to use the default settings
-            -- refer to the configuration section below
+            -- Automatically detect project root and cd to it
+            manual_mode = false,
+
+            -- Detection methods in order of priority
+            detection_methods = { "lsp", "pattern" },
+
+            -- Patterns to detect project root
+            patterns = { ".git", "_darcs", ".hg", ".bzr", ".svn", "Makefile", "CMakeLists.txt", "package.json", "Cargo.toml" },
+
+            -- Automatically change directory when opening a file
+            silent_chdir = true,
+
+            -- Show hidden files in telescope
+            show_hidden = false,
+
+            -- Don't use home directory as project root
+            scope_chdir = "global",
+
+            -- Path to store project history
+            datapath = vim.fn.stdpath("data"),
         }
 
 
