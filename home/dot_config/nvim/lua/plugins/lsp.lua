@@ -219,7 +219,13 @@ return {
 			-- ts_ls = {},
 			--
 
-			basedpyright = {},
+			basedpyright = {
+				settings = {
+					basedpyright = {
+						pythonPath = "/Users/aei/.poetry-global/.venv/bin/python",
+					},
+				},
+			},
 			lua_ls = {
 				-- cmd = { ... },
 				-- filetypes = { ... },

@@ -1,3 +1,34 @@
+local GLOBAL_VENV = "/Users/aei/.poetry-global/.venv"
+
+local function resolve_python()
+	local venv_python = vim.fn.getcwd() .. "/.venv/bin/python"
+	if vim.fn.filereadable(venv_python) == 1 then
+		return venv_python
+	end
+	local global_python = GLOBAL_VENV .. "/bin/python"
+	if vim.fn.filereadable(global_python) == 1 then
+		return global_python
+	end
+	return "python3"
+end
+
+local function resolve_pytest()
+	local cwd = vim.fn.getcwd()
+	local venv_pytest = cwd .. "/.venv/bin/pytest"
+	if vim.fn.filereadable(venv_pytest) == 1 then
+		return { venv_pytest, "-v" }
+	end
+	local venv_python = cwd .. "/.venv/bin/python"
+	if vim.fn.filereadable(venv_python) == 1 then
+		return { venv_python, "-m", "pytest", "-v" }
+	end
+	local global_pytest = GLOBAL_VENV .. "/bin/pytest"
+	if vim.fn.filereadable(global_pytest) == 1 then
+		return { global_pytest, "-v" }
+	end
+	return { GLOBAL_VENV .. "/bin/python", "-m", "pytest", "-v" }
+end
+
 return {
 	"stevearc/overseer.nvim",
 	cmd = { "OverseerRun", "OverseerToggle", "OverseerOpen" },
@@ -35,11 +66,8 @@ return {
 		overseer.register_template({
 			name = "Python: run file",
 			builder = function()
-				local file = vim.fn.expand("%:p")
-				local venv_python = vim.fn.getcwd() .. "/.venv/bin/python"
-				local python = vim.fn.filereadable(venv_python) == 1 and venv_python or "python3"
 				return {
-					cmd = { python, file },
+					cmd = { resolve_python(), vim.fn.expand("%:p") },
 					components = { "default", "on_output_quickfix", "open_output" },
 				}
 			end,
@@ -50,9 +78,6 @@ return {
 		overseer.register_template({
 			name = "Python: run file (interactive)",
 			builder = function()
-				local file = vim.fn.expand("%:p")
-				local venv_python = vim.fn.getcwd() .. "/.venv/bin/python"
-				local python = vim.fn.filereadable(venv_python) == 1 and venv_python or "python3"
 				vim.api.nvim_create_autocmd("TermOpen", {
 					once = true,
 					callback = function(ev)
@@ -67,7 +92,7 @@ return {
 					end,
 				})
 				return {
-					cmd = { python, "-i", file },
+					cmd = { resolve_python(), "-i", vim.fn.expand("%:p") },
 					components = { "default", "open_output" },
 					stdin = true,
 				}
@@ -79,10 +104,8 @@ return {
 		overseer.register_template({
 			name = "Python: pytest",
 			builder = function()
-				local venv_pytest = vim.fn.getcwd() .. "/.venv/bin/pytest"
-				local pytest = vim.fn.filereadable(venv_pytest) == 1 and venv_pytest or "pytest"
 				return {
-					cmd = { pytest, "-v" },
+					cmd = resolve_pytest(),
 					components = { "default", "on_output_quickfix", "open_output" },
 				}
 			end,
