@@ -20,8 +20,8 @@ return {
 					-- Base UI
 					Normal = { fg = "#EDEDED", bg = "#1A1A1A" },
 					NormalNC = { fg = "#EDEDED", bg = "#1A1A1A" },
-					Cursor = { fg = "#1A1A1A", bg = "#FFD700" },
-					Visual = { bg = "#FFD7AF" },
+					Visual = { fg = "#1A1A1A", bg = "#FFD7AF" },
+					VisualNOS = { fg = "#1A1A1A", bg = "#FFD7AF" },
 					CursorLine = { bg = "#222222" },
 					CursorLineNr = { fg = "#FFD700", bold = true },
 					LineNr = { fg = "#5A5A5A" },
@@ -42,7 +42,7 @@ return {
 					StatusLine = { fg = "#EDEDED", bg = "#1E1E1E" },
 					StatusLineNC = { fg = "#5A5A5A", bg = "#1A1A1A" },
 
-					-- Syntax
+					-- Syntax (legacy groups)
 					Comment = { fg = "#9E9E9E", italic = true },
 					Constant = { fg = "#E5C07B" },
 					String = { fg = "#98C379" },
@@ -59,6 +59,42 @@ return {
 					Delimiter = { fg = "#ABB2BF" },
 					Underlined = { fg = "#62CFF3", underline = true },
 
+					-- Treesitter groups
+					["@comment"] = { fg = "#9E9E9E", italic = true },
+					["@string"] = { fg = "#98C379" },
+					["@string.escape"] = { fg = "#62CFF3" },
+					["@character"] = { fg = "#98C379" },
+					["@number"] = { fg = "#E5C07B" },
+					["@float"] = { fg = "#E5C07B" },
+					["@boolean"] = { fg = "#FF6C75" },
+					["@constant"] = { fg = "#E5C07B" },
+					["@constant.builtin"] = { fg = "#FF6C75" },
+					["@function"] = { fg = "#61AFEF", bold = true },
+					["@function.call"] = { fg = "#61AFEF" },
+					["@function.builtin"] = { fg = "#62CFF3" },
+					["@method"] = { fg = "#61AFEF", bold = true },
+					["@method.call"] = { fg = "#61AFEF" },
+					["@keyword"] = { fg = "#C678DD", italic = true },
+					["@keyword.return"] = { fg = "#C678DD", italic = true },
+					["@keyword.operator"] = { fg = "#FFD700" },
+					["@conditional"] = { fg = "#C678DD", italic = true },
+					["@repeat"] = { fg = "#C678DD", italic = true },
+					["@include"] = { fg = "#C678DD", italic = true },
+					["@exception"] = { fg = "#E06C75" },
+					["@operator"] = { fg = "#FFD700" },
+					["@type"] = { fg = "#56B6C2" },
+					["@type.builtin"] = { fg = "#56B6C2", italic = true },
+					["@variable"] = { fg = "#EDEDED" },
+					["@variable.builtin"] = { fg = "#FF6C75" },
+					["@parameter"] = { fg = "#EDEDED" },
+					["@field"] = { fg = "#61AFEF" },
+					["@property"] = { fg = "#61AFEF" },
+					["@namespace"] = { fg = "#E5C07B" },
+					["@punctuation.delimiter"] = { fg = "#ABB2BF" },
+					["@punctuation.bracket"] = { fg = "#ABB2BF" },
+					["@tag"] = { fg = "#E06C75" },
+					["@tag.attribute"] = { fg = "#E5C07B" },
+
 					-- Diagnostics
 					DiagnosticError = { fg = "#E06C75" },
 					DiagnosticWarn = { fg = "#FFD700" },
@@ -73,13 +109,13 @@ return {
 					GitSignsChange = { fg = "#E5C07B" },
 					GitSignsDelete = { fg = "#E06C75" },
 
-					-- Diff
-					DiffAdd = { bg = "#1E1E1E" },
-					DiffChange = { bg = "#2A2A2A" },
-					DiffDelete = { bg = "#2F2F2F" },
-					DiffText = { fg = "#FFD700", bg = "#2A2A2A", bold = true },
+					-- Diff (visible colored backgrounds)
+					DiffAdd = { bg = "#1E3A1E" },
+					DiffChange = { bg = "#2A2A1A" },
+					DiffDelete = { bg = "#3A1E1E" },
+					DiffText = { fg = "#FFD700", bg = "#3A3A1A", bold = true },
 
-					-- Treesitter context, LSP highlights
+					-- LSP highlights
 					LspReferenceText = { bg = "#2A2A2A" },
 					LspReferenceRead = { bg = "#2A2A2A" },
 					LspReferenceWrite = { bg = "#2A2A2A" },
