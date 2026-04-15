@@ -2,9 +2,10 @@
 # First line removes the path; second line sets it.  Without the first line,
 # your path gets massive and fish becomes very slow.
 set -e fish_user_paths
-set -U fish_user_paths $HOME/.bin  $HOME/.local/bin $HOME/.config/emacs/bin $HOME/Applications /var/lib/flatpak/exports/bin/ $fish_user_paths
+set -U fish_user_paths $HOME/.bin  $HOME/.local/bin $HOME/.config/emacs/bin $HOME/Applications /var/lib/flatpak/exports/bin/ /opt/homebrew/Cellar/dotnet@9/9.0.114/bin $fish_user_paths
+set -U fish_user_paths $HOME/repos/Odin
 
-### EXPORT ###
+## EXPORT ###
 set fish_greeting                                 # Supresses fish's intro message
 set TERM "xterm-256color"                         # Sets the terminal type
 # set EDITOR "emacsclient -t -a ''"                 # $EDITOR use Emacs in terminal
@@ -21,114 +22,12 @@ set -x MANPAGER "nvim +Man!"
 ### "less" as manpager
 # set -x MANPAGER "less"
 
-### SET EITHER DEFAULT EMACS MODE OR VI MODE ###
-function fish_user_key_bindings
-  # fish_default_key_bindings
-  fish_vi_key_bindings
-end
-### END OF VI MODE ###
-
 ### AUTOCOMPLETE AND HIGHLIGHT COLORS ###
 set fish_color_normal brcyan
 set fish_color_autosuggestion '#7d7d7d'
 set fish_color_command brcyan
 set fish_color_error '#ff6c6b'
 set fish_color_param brcyan
-
-### FUNCTIONS ###
-
-# Functions needed for !! and !$
-function __history_previous_command
-  switch (commandline -t)
-  case "!"
-    commandline -t $history[1]; commandline -f repaint
-  case "*"
-    commandline -i !
-  end
-end
-
-function __history_previous_command_arguments
-  switch (commandline -t)
-  case "!"
-    commandline -t ""
-    commandline -f history-token-search-backward
-  case "*"
-    commandline -i '$'
-  end
-end
-
-# The bindings for !! and !$
-if [ "$fish_key_bindings" = "fish_vi_key_bindings" ];
-  bind -Minsert ! __history_previous_command
-  bind -Minsert '$' __history_previous_command_arguments
-else
-  bind ! __history_previous_command
-  bind '$' __history_previous_command_arguments
-end
-
-# Function for creating a backup file
-# ex: backup file.txt
-# result: copies file as file.txt.bak
-function backup --argument filename
-    cp $filename $filename.bak
-end
-
-# Function for copying files and directories, even recursively.
-# ex: copy DIRNAME LOCATIONS
-# result: copies the directory and all of its contents.
-function copy
-    set count (count $argv | tr -d \n)
-    if test "$count" = 2; and test -d "$argv[1]"
-	set from (echo $argv[1] | trim-right /)
-	set to (echo $argv[2])
-        command cp -r $from $to
-    else
-        command cp $argv
-    end
-end
-
-# Function for printing a column (splits input on whitespace)
-# ex: echo 1 2 3 | coln 3
-# output: 3
-function coln
-    while read -l input
-        echo $input | awk '{print $'$argv[1]'}'
-    end
-end
-
-# Function for printing a row
-# ex: seq 3 | rown 3
-# output: 3
-function rown --argument index
-    sed -n "$index p"
-end
-
-# Function for ignoring the first 'n' lines
-# ex: seq 10 | skip 5
-# results: prints everything but the first 5 lines
-function skip --argument n
-    tail +(math 1 + $n)
-end
-
-# Function for taking the first 'n' lines
-# ex: seq 10 | take 5
-# results: prints only the first 5 lines
-function take --argument number
-    head -$number
-end
-
-# Function for org-agenda
-function org-search -d "send a search string to org-mode"
-    set -l output (/usr/bin/emacsclient -a "" -e "(message \"%s\" (mapconcat #'substring-no-properties \
-        (mapcar #'org-link-display-format \
-        (org-ql-query \
-        :select #'org-get-heading \
-        :from  (org-agenda-files) \
-        :where (org-ql--query-string-to-sexp \"$argv\"))) \
-        \"
-    \"))")
-    printf $output
-end
 
 # Function for updating homebrew
 if test -d /home/linuxbrew/.linuxbrew # Linux
@@ -144,31 +43,9 @@ fish_add_path -gP "$HOMEBREW_PREFIX/bin" "$HOMEBREW_PREFIX/sbin";
 ! set -q MANPATH; and set MANPATH ''; set -gx MANPATH "$HOMEBREW_PREFIX/share/man" $MANPATH;
 ! set -q INFOPATH; and set INFOPATH ''; set -gx INFOPATH "$HOMEBREW_PREFIX/share/info" $INFOPATH;
 
-# Path configuration 
-fish_add_path ~/.cargo/bin
-fish_add_path ~/go/bin
-
-# Function to grammar check
-function gptg
-    # Check if an argument was provided
-    if test (count $argv) -gt 0
-        tgpt "Act as a proofreader and review the following text. Feel free to rephrase sentences or make changes to enhance clarity but maintain the overall tone and style of the original. You’re allowed to make slight refinement for clarity and tone if needed. Make sure the sentences sounds natural, flows well and comes out polite. Show all changes in bold so I can see what has been updated. \n\n Here's the text: \"$argv\"" | tee /tmp/markdown_buffer.md
-    else
-        echo "No arguments provided!"
-    end
-end
-
-function gptc
-    # Check if an argument was provided
-    if test (count $argv) -gt 0
-        tgpt "You are an assistant that generates helpful and concise git commit messages adhering to Conventional Commits. Generate a Git commit message for the following changes, following the Git commit standards. Make sure you provide a few alternatives. \n\n Here's the text: \"$argv\""
-    else
-        echo "No arguments provided!"
-    end
-end
-
-
-### END OF FUNCTIONS ###
+# Path configuration
+fish_add_path /Users/aei/.cargo/bin
+fish_add_path /Users/aei/go/bin
 
 
 ### ALIASES ###
@@ -267,6 +144,7 @@ alias lg="lazygit"
 alias gpt="tgpt"
 alias gpto="glow /tmp/markdown_buffer.md"
 alias ffs="gcloud auth application-default login"
+alias python="python3"
 
 ### RANDOM COLOR SCRIPT ###
 # Get this script from my GitLab: gitlab.com/dwt1/shell-color-scripts
@@ -274,8 +152,17 @@ alias ffs="gcloud auth application-default login"
 # colorscript random
 # fastfetch -c neofetch.jsonc
 if status is-interactive
-  echo "" & pokeget charizard --hide-name | fastfetch -c neofetch.jsonc --logo-padding-left 10 --file-raw -
+  echo "" & pokeget charizard --hide-name | fastfetch -c neofetch.jsonc --logo-padding-left 25 --file-raw -
 end
+# echo "" & pokeget xerneas-active --hide-name | fastfetch -c neofetch.jsonc --logo-padding-left 30 --file-raw -
+# echo "" & pokeget pikachu-gmax --hide-name | fastfetch -c examples/26.jsonc --logo-padding-left 30 --file-raw -
+# echo "" & pokeget charizard-mega-x --hide-name | fastfetch -c neofetch.jsonc --logo-padding-left 30 --file-raw -
+# echo "" & pokeget charizard-mega-y --hide-name | fastfetch -c examples/13.jsonc --logo-padding-left 30 --file-raw -
 
 ### SETTING THE STARSHIP PROMPT ###
 starship init fish | source
+
+# Created by `pipx` on 2025-07-16 22:08:20
+set PATH $PATH /Users/aei/.local/bin
+
+set -gx OLLAMA_HOST http://192.168.1.128:11434
