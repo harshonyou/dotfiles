@@ -90,6 +90,7 @@ format = "[$time]($style) "
 [character]
 success_symbol = "[╰─󰁔](bold 238) "
 error_symbol = "[╰─](bold 238)[×](bold red) "
+vicmd_symbol = "[╰─󰁔](bold 238) "
 
 [battery]
 full_symbol = "󰁹 "
