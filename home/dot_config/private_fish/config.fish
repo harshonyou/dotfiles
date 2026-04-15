@@ -152,7 +152,9 @@ alias python="python3"
 # colorscript random
 # fastfetch -c neofetch.jsonc
 if status is-interactive
-  echo "" & pokeget charizard --hide-name | fastfetch -c neofetch.jsonc --logo-padding-left 25 --file-raw -
+  set -l cols (tput cols)
+  set -l pad (math --scale=0 "max(0, ($cols - 90) / 2)")
+  echo "" & pokeget charizard --hide-name | fastfetch -c ~/.config/fastfetch/neofetch.jsonc --logo-padding-left $pad --file-raw -
 end
 # echo "" & pokeget xerneas-active --hide-name | fastfetch -c neofetch.jsonc --logo-padding-left 30 --file-raw -
 # echo "" & pokeget pikachu-gmax --hide-name | fastfetch -c examples/26.jsonc --logo-padding-left 30 --file-raw -
