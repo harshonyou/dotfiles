@@ -115,6 +115,12 @@ return {
 					DiffDelete = { bg = "#3A1E1E" },
 					DiffText = { fg = "#FFD700", bg = "#3A3A1A", bold = true },
 
+					-- Blink signature help active parameter
+					BlinkCmpSignatureHelpActiveParameter = { fg = "#1A1A1A", bg = "#FFD700", bold = true },
+
+					-- Snippet active tabstop (shown when accepting completions with brackets)
+					SnippetTabstopActive = { fg = "#FFD700", bold = true },
+
 					-- LSP highlights
 					LspReferenceText = { bg = "#2A2A2A" },
 					LspReferenceRead = { bg = "#2A2A2A" },

@@ -55,6 +55,15 @@ vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 -- prevent x delete from registering when next paste
 vim.keymap.set("n", "x", '"_x', opts)
 
+-- Stop snippet on insert leave so SnippetTabstopActive highlight clears
+vim.api.nvim_create_autocmd("InsertLeave", {
+	callback = function()
+		if vim.snippet.active() then
+			vim.snippet.stop()
+		end
+	end,
+})
+
 -- Hightlight yanking
 vim.api.nvim_create_autocmd("TextYankPost", {
 	desc = "Highlight when yanking (copying) text",
@@ -70,6 +79,16 @@ vim.keymap.set("n", "<leader>fp", function()
 	vim.fn.setreg("+", filePath) -- Copy the file path to the clipboard register
 	print("File path copied to clipboard: " .. filePath) -- Optional: print message to confirm
 end, { desc = "Copy file path to clipboard" })
+
+-- Close toggleterm with Esc from terminal mode (skip lazygit and other terminals)
+vim.keymap.set("t", "<Esc>", function()
+	local buf_name = vim.api.nvim_buf_get_name(0)
+	if buf_name:match("toggleterm") then
+		vim.cmd("ToggleTerm")
+	else
+		vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<Esc>", true, false, true), "n", false)
+	end
+end, { desc = "Close terminal" })
 
 -- Toggle LSP diagnostics visibility
 local isLspDiagnosticsVisible = true
