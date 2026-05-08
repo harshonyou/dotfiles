@@ -15,6 +15,7 @@ return {
 				"python",
 				"markdown",
 				"go",
+				"norg",
 			},
 			sync_install = false,
 			highlight = {

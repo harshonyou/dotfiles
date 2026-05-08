@@ -86,7 +86,7 @@ return {
 			-- Default list of enabled providers defined so that you can extend it
 			-- elsewhere in your config, without redefining it, due to `opts_extend`
 			sources = {
-				default = { "lsp", "path", "snippets", "buffer", "emoji", "sql" },
+				default = { "lsp", "path", "snippets", "buffer", "emoji", "sql", "neorg" },
 				providers = {
 					emoji = {
 						module = "blink-emoji",
@@ -100,6 +100,14 @@ return {
 								{ "gitcommit", "markdown" },
 								vim.o.filetype
 							)
+						end,
+					},
+					neorg = {
+						name = "neorg",
+						module = "blink.compat.source",
+						score_offset = 1,
+						should_show_items = function()
+							return vim.bo.filetype == "norg"
 						end,
 					},
 					sql = {
