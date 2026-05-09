@@ -44,7 +44,7 @@ vim.keymap.set("v", "<", "<gv", opts)
 vim.keymap.set("v", ">", ">gv", opts)
 
 -- remember yanked
-vim.keymap.set("v", "p", '"_dp', opts)
+vim.keymap.set("x", "p", '"_dP', opts)
 
 -- Copies or Yank to system clipboard
 vim.keymap.set("n", "<leader>Y", [["+Y]], opts)
