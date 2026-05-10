@@ -12,14 +12,17 @@ return {
 		"nvim-tree/nvim-web-devicons",
 	},
 	opts = {
-		lang = "python3",
+		lang = "golang",
 		storage = {
-			home = vim.fn.expand("~/leetcode"),
+			home = vim.fn.expand("~/repos/grindcode"),
 			cache = vim.fn.stdpath("cache") .. "/leetcode",
 		},
+		editor = {
+			reset_previous_code = false,
+		},
 		injector = {
-			["python3"] = {
-				before = true,
+			["golang"] = {
+				before = { "package main" },
 			},
 		},
 		hooks = {
