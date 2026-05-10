@@ -145,7 +145,7 @@ return {
 			cmdline = {
 				enabled = true,
 				-- keymap = { preset = "inherit" },
-				keymap = { preset = "cmdline" },
+				keymap = { preset = "cmdline", ["<CR>"] = { "accept", "fallback" } },
 				completion = {
 					-- completion = {
 					-- 	list = {
