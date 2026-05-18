@@ -1,4 +1,5 @@
 format = """
+[╭─](bold 238)\
 $os\
 $username\
 $hostname\
@@ -19,7 +20,7 @@ add_newline = true
 command_timeout = 1000
 
 [os]
-format = '[╭─](bold 238)[ $symbol](bold 056) '   
+format = '[ $symbol](bold 056) '
 disabled = false
 
 [username]
