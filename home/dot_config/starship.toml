@@ -83,6 +83,12 @@ disabled = false
 [fill]
 symbol = " "
 
+[status]
+disabled = false
+symbol = "× "
+format = '[$symbol$status( $common_meaning)( $signal_name)]($style) '
+style = "bold red"
+
 [time]
 disabled = false
 style = "bold bright-black"
@@ -90,7 +96,7 @@ format = "[$time]($style) "
 
 [character]
 success_symbol = "[╰─󰁔](bold 238) "
-error_symbol = "[╰─](bold 238)[×](bold red) "
+error_symbol = "[╰─󰁔](bold 238) "
 vicmd_symbol = "[╰─󰁔](bold 238) "
 
 [battery]
