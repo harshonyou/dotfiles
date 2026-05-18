@@ -6,6 +6,10 @@ $hostname\
 $directory\
 $git_branch\
 $git_status\
+$golang\
+$python\
+$nodejs\
+$rust\
 $package\
 $line_break\
 $character
@@ -147,6 +151,8 @@ symbol = " "
 symbol = " "
 
 [golang]
+format = "[$symbol$version]($style) "
+style = "bold cyan"
 symbol = " "
 
 [guix_shell]
@@ -183,6 +189,8 @@ symbol = "󰆥 "
 symbol = " "
 
 [nodejs]
+format = "[$symbol$version]($style) "
+style = "bold green"
 symbol = " "
 
 [os.symbols]
@@ -230,6 +238,8 @@ symbol = "󰏗 "
 symbol = "󱗆 "
 
 [python]
+format = "[$symbol$version]($style) "
+style = "bold yellow"
 symbol = " "
 
 [rlang]
@@ -239,6 +249,8 @@ symbol = "󰟔 "
 symbol = " "
 
 [rust]
+format = "[$symbol$version]($style) "
+style = "bold red"
 symbol = " "
 
 [scala]
