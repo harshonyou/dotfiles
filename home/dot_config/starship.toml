@@ -7,13 +7,15 @@ $directory\
 $git_branch\
 $git_status\
 $package\
-$fill\
+$line_break\
+$character
+"""
+
+right_format = """
 $status\
 $cmd_duration\
 $time\
 $battery\
-$line_break\
-$character
 """
 
 add_newline = true
