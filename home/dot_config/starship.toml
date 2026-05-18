@@ -55,8 +55,8 @@ format = "at [$path]($style)[$read_only]($read_only_style) "
 [git_branch]
 symbol = "󰊢 "
 format = "on [$symbol$branch]($style)"
-truncation_length = 4
-truncation_symbol = "…/"
+truncation_length = 20
+truncation_symbol = "…"
 style = "bold green"
 
 # Shows current git status
