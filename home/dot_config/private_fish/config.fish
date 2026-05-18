@@ -22,6 +22,7 @@ set -x MANPAGER "nvim +Man!"
 ### "less" as manpager
 # set -x MANPAGER "less"
 
+
 ### AUTOCOMPLETE AND HIGHLIGHT COLORS ###
 set fish_color_normal brcyan
 set fish_color_autosuggestion '#7d7d7d'
@@ -163,6 +164,12 @@ end
 
 ### SETTING THE STARSHIP PROMPT ###
 starship init fish | source
+
+functions --copy fish_right_prompt __starship_right_prompt_orig
+function fish_right_prompt
+    __starship_right_prompt_orig
+    set_color $fish_color_command
+end
 
 # Created by `pipx` on 2025-07-16 22:08:20
 set PATH $PATH /Users/aei/.local/bin
