@@ -1,7 +1,7 @@
 {
   "statusLine": {
     "type": "command",
-    "command": "bash \"/Users/aei/.claude/plugins/marketplaces/caveman/hooks/caveman-statusline.sh\""
+    "command": "bash \"/Users/aei/.claude/statusline.sh\""
   },
   "enabledPlugins": {
     "gopls-lsp@claude-plugins-official": true,
@@ -16,5 +16,18 @@
     }
   },
   "alwaysThinkingEnabled": true,
-  "effortLevel": "high"
+  "effortLevel": "high",
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"/Users/aei/.claude/hooks/token-cache.sh\"",
+            "timeout": 15
+          }
+        ]
+      }
+    ]
+  }
 }
