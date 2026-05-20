@@ -1,5 +1,6 @@
 return {
 	"goolord/alpha-nvim",
+	pin = true, -- local patch for nvim 0.12 vim.validate API change, remove when upstream fixes
 	dependencies = { "nvim-tree/nvim-web-devicons" },
 	event = "VimEnter",
 	config = function()

@@ -1,5 +1,6 @@
 return {
     "ahmedkhalf/project.nvim",
+    pin = true, -- local patch for nvim 0.12 vim.lsp.get_clients API change, remove when upstream fixes
     init = function()
         -- project.nvim uses removed vim.lsp.buf_get_clients() — patch until upstream fixes it
         if vim.lsp.buf_get_clients == nil then
