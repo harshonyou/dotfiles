@@ -55,13 +55,18 @@ return {
 					vim.keymap.set(mode, keys, func, { buffer = event.buf, desc = "LSP: " .. desc })
 				end
 
+				-- Remove nvim 0.11 default gr* maps that conflict with custom gr binding
+				for _, key in ipairs({ "grn", "gra", "gri", "grr", "gO" }) do
+					pcall(vim.keymap.del, "n", key, { buffer = event.buf })
+				end
+
 				-- Jump to the definition of the word under your cursor.
 				--  This is where a variable was first declared, or where a function is defined, etc.
 				--  To jump back, press <C-t>.
 				map("gd", require("fzf-lua").lsp_definitions, "[G]oto [D]efinition")
 
 				-- Find references for the word under your cursor.
-				map("gr", require("fzf-lua").lsp_references, "[G]oto [R]eferences")
+				vim.keymap.set("n", "gr", function() require("fzf-lua").lsp_references({ async = true }) end, { buffer = event.buf, desc = "LSP: [G]oto [R]eferences", nowait = true })
 
 				-- Jump to the implementation of the word under your cursor.
 				--  Useful when your language has ways of declaring types without an actual implementation.
