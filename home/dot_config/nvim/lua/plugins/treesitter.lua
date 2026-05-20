@@ -1,38 +1,27 @@
 return {
 	"nvim-treesitter/nvim-treesitter",
+	branch = "main",
+	lazy = false,
 	build = ":TSUpdate",
 	config = function()
-		local configs = require("nvim-treesitter.configs")
-
-		configs.setup({
-			ensure_installed = {
-				"c",
-				"cpp",
-				"lua",
-				"vim",
-				"vimdoc",
-				"query",
-				"python",
-				"markdown",
-				"go",
-				"norg",
-			},
-			sync_install = false,
-			highlight = {
-				enable = true,
-				additional_vim_regex_highlighting = false,
-			},
-			indent = { enable = true },
-
-			incremental_selection = {
-				enable = true,
-				keymaps = {
-					init_selection = "<Enter>", -- set to `false` to disable one of the mappings
-					node_incremental = "<Enter>",
-					scope_incremental = false,
-					node_decremental = "<Backspace>",
-				},
-			},
+		require("nvim-treesitter").setup()
+		require("nvim-treesitter").install({
+			"c",
+			"cpp",
+			"lua",
+			"vim",
+			"vimdoc",
+			"query",
+			"python",
+			"markdown",
+			"markdown_inline",
+			"go",
+		})
+		vim.api.nvim_create_autocmd("FileType", {
+			pattern = { "c", "cpp", "lua", "vim", "vimdoc", "query", "python", "markdown", "go" },
+			callback = function()
+				vim.treesitter.start()
+			end,
 		})
 	end,
 }
