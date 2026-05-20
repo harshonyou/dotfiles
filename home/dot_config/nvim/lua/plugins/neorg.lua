@@ -2,7 +2,39 @@ return {
 	"nvim-neorg/neorg",
 	lazy = false,
 	version = "*",
-	dependencies = { "nvim-lua/plenary.nvim" },
+	dependencies = {
+		"nvim-lua/plenary.nvim",
+		{
+			"nvim-neorg/tree-sitter-norg",
+			build = function()
+				local parser_dir = vim.fn.stdpath("data") .. "/site/parser"
+				vim.fn.mkdir(parser_dir, "p")
+				local plugin_dir = vim.fn.stdpath("data") .. "/lazy/tree-sitter-norg"
+				os.execute(
+					"cc -shared -fPIC -o "
+						.. parser_dir
+						.. "/norg.so -I"
+						.. plugin_dir
+						.. "/src "
+						.. plugin_dir
+						.. "/src/parser.c -x c++ "
+						.. plugin_dir
+						.. "/src/scanner.cc -lstdc++"
+				)
+			end,
+		},
+		{
+			"nvim-neorg/tree-sitter-norg-meta",
+			build = function()
+				local parser_dir = vim.fn.stdpath("data") .. "/site/parser"
+				vim.fn.mkdir(parser_dir, "p")
+				local plugin_dir = vim.fn.stdpath("data") .. "/lazy/tree-sitter-norg-meta"
+				os.execute(
+					"cd " .. plugin_dir .. " && tree-sitter build --output " .. parser_dir .. "/norg_meta.so"
+				)
+			end,
+		},
+	},
 	config = function()
 		require("neorg").setup({
 			load = {
