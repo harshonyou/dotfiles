@@ -210,6 +210,13 @@ return {
 		--        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
 		local servers = {
 			bashls = {},
+			yamlls = {
+				settings = {
+					yaml = {
+						schemaStore = { enable = true, url = "https://www.schemastore.org/api/json/catalog.json" },
+					},
+				},
+			},
 			marksman = {},
 			clangd = {},
 			gopls = {},

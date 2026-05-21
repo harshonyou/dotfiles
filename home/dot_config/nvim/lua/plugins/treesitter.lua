@@ -16,9 +16,11 @@ return {
 			"markdown",
 			"markdown_inline",
 			"go",
+			"yaml",
+			"dockerfile",
 		})
 		vim.api.nvim_create_autocmd("FileType", {
-			pattern = { "c", "cpp", "lua", "vim", "vimdoc", "query", "python", "markdown", "go" },
+			pattern = { "c", "cpp", "lua", "vim", "vimdoc", "query", "python", "markdown", "go", "yaml", "dockerfile" },
 			callback = function()
 				vim.treesitter.start()
 				vim.bo.indentexpr = "v:lua.require'nvim-treesitter.indent'.get_indent(v:lnum)"

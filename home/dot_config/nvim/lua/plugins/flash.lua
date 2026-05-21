@@ -20,7 +20,8 @@ return {
     { "#", mode = { "n" }, function() require("flash").jump({ pattern = vim.fn.expand("<cword>"), search = { forward = false }, jump = { history = true, register = true } }) end, desc = "Flash #" },
     { "<CR>", mode = { "n", "x", "o" }, function()
       require("flash").treesitter({
-        actions = { ["<CR>"] = "next", ["<BS>"] = "prev" }
+        actions = { ["<CR>"] = "next", ["<BS>"] = "prev" },
+        label = { exclude = "dcyp" },
       })
     end, desc = "Treesitter incremental selection" },
   },
