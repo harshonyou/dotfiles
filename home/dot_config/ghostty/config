@@ -17,10 +17,8 @@ cursor-style-blink = false
 shell-integration-features = no-cursor
 
 term = xterm-256color
-font-family            = "MonoLisa Regular Nerd Font Complete Mono"
-font-family-bold       = "MonoLisa Bold Nerd Font Complete Mono"
-font-family-italic     = "MonoLisa Regular Italic Nerd Font Complete Mono"
-font-family-bold-italic= "MonoLisa Bold Italic Nerd Font Complete Mono"
+font-family       = "MonoLisa"
+font-feature      = calt, liga, zero, ss01, ss02, ss03, ss05, ss06, ss07, ss08, ss10, ss11, ss12, ss13, ss14, ss17, ss18
 font-size              = 18
 scrollback-limit       = 1048576
 window-width           = 150
