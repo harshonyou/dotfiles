@@ -17,10 +17,10 @@ cursor-style-blink = false
 shell-integration-features = no-cursor
 
 term = xterm-256color
-font-family       = "IosevkaTerm NFP"
-font-family-bold       = "IosevkaTerm NFP"
-font-family-italic     = "IosevkaTerm NFP"
-font-family-bold-italic= "IosevkaTerm NFP"
+font-family            = "MonoLisa Regular Nerd Font Complete Mono"
+font-family-bold       = "MonoLisa Bold Nerd Font Complete Mono"
+font-family-italic     = "MonoLisa Regular Italic Nerd Font Complete Mono"
+font-family-bold-italic= "MonoLisa Bold Italic Nerd Font Complete Mono"
 font-size              = 18
 scrollback-limit       = 1048576
 window-width           = 150
