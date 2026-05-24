@@ -131,4 +131,70 @@ PYEOF
 
 [ -s "$TMP_FILE" ] && mv "$TMP_FILE" "$CACHE_FILE" || rm -f "$TMP_FILE"
 
+# Compute daily total cost + billing reset date -> ~/.claude/.daily-stats
+python3 - <<'PYEOF2'
+import os, glob, json
+from datetime import date
+
+today = date.today()
+today_str = str(today)
+cache_dir = os.path.expanduser('~/.claude')
+
+# Sum costs from all session caches modified today
+daily_cents = 0
+for path in glob.glob(os.path.join(cache_dir, '.token-cache-*')):
+    if path.endswith('.tmp'):
+        continue
+    try:
+        if date.fromtimestamp(os.path.getmtime(path)) != today:
+            continue
+        with open(path) as f:
+            for line in f:
+                if line.startswith('COST_CENTS='):
+                    daily_cents += int(line.strip().split('=')[1])
+                    break
+    except Exception:
+        pass
+
+# Billing reset day from ~/.claude.json (same day-of-month as first token)
+reset_day = 1
+try:
+    with open(os.path.expanduser('~/.claude.json')) as f:
+        ft = json.load(f).get('claudeCodeFirstTokenDate', '')
+    if ft:
+        reset_day = int(ft[8:10])
+except Exception:
+    pass
+
+# Next reset date
+try:
+    if today.day < reset_day:
+        reset_dt = today.replace(day=reset_day)
+    else:
+        m, y = today.month + 1, today.year
+        if m > 12:
+            m, y = 1, y + 1
+        reset_dt = today.replace(year=y, month=m, day=reset_day)
+except ValueError:
+    import calendar
+    m, y = today.month + 1, today.year
+    if m > 12:
+        m, y = 1, y + 1
+    reset_dt = date(y, m, calendar.monthrange(y, m)[1])
+
+reset_days = (reset_dt - today).days
+reset_str = f"{reset_dt.strftime('%b')} {reset_dt.day}"
+
+dc = daily_cents
+daily_fmt = f"${dc//100}.{dc%100:02d}" if dc >= 100 else (f"{dc}c" if dc > 0 else "0c")
+
+out = os.path.join(cache_dir, '.daily-stats')
+with open(out + '.tmp', 'w') as f:
+    f.write(f"DAILY_COST_FMT='{daily_fmt}'\n")
+    f.write(f"RESET_DAYS={reset_days}\n")
+    f.write(f"RESET_STR='{reset_str}'\n")
+    f.write(f"DAILY_DATE='{today_str}'\n")
+os.replace(out + '.tmp', out)
+PYEOF2
+
 afplay /System/Library/Sounds/Tink.aiff 2>/dev/null &

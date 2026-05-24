@@ -61,6 +61,7 @@ fi
 SEC_META=""   # model + cache% + ctx%
 SEC_STATS=""  # cost + turns + elapsed
 SEC_NAME=""   # session name
+SEC_DAILY=""  # today's total cost + billing reset
 
 # Resolve session ID: env var or latest JSONL for this project
 SESSION_ID=$(printf '%s' "${CLAUDE_CODE_SESSION_ID:-}" | tr -cd 'a-zA-Z0-9-')
@@ -156,9 +157,27 @@ if [ -n "$SESSION_ID" ]; then
     fi
 fi
 
+# --- Daily stats: today's total cost + billing reset ---
+DAILY_FILE="${HOME}/.claude/.daily-stats"
+if [ -f "$DAILY_FILE" ] && [ ! -L "$DAILY_FILE" ]; then
+    # shellcheck disable=SC1090
+    . "$DAILY_FILE"
+    if [ "${DAILY_DATE:-}" = "$(date +%Y-%m-%d)" ]; then
+        [ -n "${DAILY_COST_FMT:-}" ] && SEC_DAILY="${GRAY}Σ${DAILY_COST_FMT}${RESET}"
+        if [ -n "${RESET_STR:-}" ]; then
+            if [ "${RESET_DAYS:-99}" -le 3 ] 2>/dev/null; then
+                SEC_DAILY+=" ${YELLOW}↺${RESET_STR}${RESET}"
+            else
+                SEC_DAILY+=" ${GRAY}↺${RESET_STR}${RESET}"
+            fi
+        fi
+    fi
+fi
+
 # --- Assemble with │ separators between non-empty sections ---
 [ -n "$SEC_GIT"   ] && printf '%s' "${DIV}${SEC_GIT}"
 [ -n "$SEC_META"  ] && printf '%s' "${DIV}${SEC_META}"
 [ -n "$SEC_STATS" ] && printf '%s' "${DIV}${SEC_STATS}"
 [ -n "$SEC_NAME"  ] && printf '%s' "${DIV}${SEC_NAME}"
+[ -n "$SEC_DAILY" ] && printf '%s' "${DIV}${SEC_DAILY}"
 printf '%s\n' "${DIV}${GRAY}$(date +%H:%M)${RESET}"
