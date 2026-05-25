@@ -1,8 +1,6 @@
 theme = Duotone Dark
 cursor-style = block
 mouse-hide-while-typing = true
-window-height = 30
-window-width = 130
 
 macos-option-as-alt = left
 keybind = alt+left=unbind
@@ -17,17 +15,23 @@ cursor-style-blink = false
 shell-integration-features = no-cursor
 
 term = xterm-256color
+
 font-family       = "MonoLisa"
 font-feature      = calt, liga, zero, ss01, ss02, ss03, ss05, ss06, ss07, ss08, ss10, ss11, ss12, ss13, ss14, ss17, ss18
 font-size              = 18
+
 scrollback-limit       = 1048576
+
 window-width           = 150
 window-height          = 35
-window-position-x      = 250
-window-position-y      = 250
-macos-titlebar-style   = tabs
+window-position-x      = 30
+window-position-y      = 80
 window-padding-x       = 0
 window-padding-y       = 0
 window-padding-balance = true
+
+macos-titlebar-style   = tabs
+
+
 background-opacity     = 1
 
