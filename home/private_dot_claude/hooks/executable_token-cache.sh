@@ -197,4 +197,3 @@ with open(out + '.tmp', 'w') as f:
 os.replace(out + '.tmp', out)
 PYEOF2
 
-afplay /System/Library/Sounds/Tink.aiff 2>/dev/null &
