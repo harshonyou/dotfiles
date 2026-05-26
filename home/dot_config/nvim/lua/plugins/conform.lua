@@ -10,6 +10,7 @@ return {
 			go = { "gofumpt" },
 			cpp = { "clang_format" },
 			c = { "clang_format" },
+			typst = { "typstyle" },
 		},
 		format_on_save = {
 			-- These options will be passed to conform.format()

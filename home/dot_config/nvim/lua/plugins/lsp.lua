@@ -231,6 +231,7 @@ return {
 			-- ts_ls = {},
 			--
 
+			tinymist = {},
 			basedpyright = {
 				settings = {
 					basedpyright = {
@@ -283,6 +284,8 @@ return {
 			"golangci-lint",
 			"clangd", -- C++ LSP server (includes clang-tidy)
 			"clang-format", -- C++ formatter
+			"tinymist", -- Typst LSP
+			"typstyle", -- Typst formatter
 		})
 		require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
