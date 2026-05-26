@@ -14,7 +14,7 @@ return {
 	opts = {
 		lang = "golang",
 		storage = {
-			home = vim.fn.expand("~/repos/grindcode"),
+			home = vim.fn.expand("~/repos/grindcode/leetcode/"),
 			cache = vim.fn.stdpath("cache") .. "/leetcode",
 		},
 		editor = {
