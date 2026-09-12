@@ -1,13 +1,11 @@
 manifest:
   remotes:
-    - name: zmkfirmware
-      url-base: https://github.com/zmkfirmware
-    - name: harshonyou
-      url-base: https://github.com/harshonyou
+    - name: SethMilliken
+      url-base: https://github.com/SethMilliken
   projects:
     - name: zmk
-      remote: harshonyou
-      revision: caksoylar/zen-v1+v2
+      remote: SethMilliken
+      revision: zen-display-patches
       import: app/west.yml
   self:
     path: keeb/config/zen-2
